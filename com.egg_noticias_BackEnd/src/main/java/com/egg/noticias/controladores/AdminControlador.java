@@ -80,12 +80,20 @@ public class AdminControlador {
             ResponseEntity<Noticia> responseEntity = ResponseEntity.ok(noticia);
             return responseEntity;
         } catch (MiExcepcion e) {
-            
+
             return null;
         }
+    }
 
+    @GetMapping("usuarios")
+        public ResponseEntity<List<Usuario>> listaUsuarios(){
+            List<Usuario> usuario = usuarioServicio.usuarios();
+            ResponseEntity<List<Usuario>> responseEntity = ResponseEntity.ok(usuario);
+            return responseEntity;
     }
 }
+
+//}
 //    @GetMapping("/cargar")
 //    public String noticia(ModelMap model) {
 //        return "noticiaForm";
